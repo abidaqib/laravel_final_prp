@@ -21,6 +21,13 @@
 		<input type="password" name="password" required>
 		<input type="submit" name="logIn" value="Log In">
 	</form>
+	<form action="{{ URL::to('update') }}" method="post">
+		{{ csrf_field() }}
+
+		<input type="email" name="email" required>
+		<input type="password" name="password" required>
+		<input type="submit" name="update" value="Update">
+	</form>
 
 
 </body>

@@ -23,5 +23,7 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 
 Route::post('signup', 'TotalControle@signUp');
 Route::post('signin', 'TotalControle@signIn');
+Route::post('update', 'TotalControle@update');
+
 
 Route::post('logout', 'TotalControle@logout');

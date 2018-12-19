@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Info;
 use Session;
 
+use Illuminate\Support\Facades\DB;
 
 class TotalControle extends Controller
 {
@@ -70,5 +71,20 @@ class TotalControle extends Controller
 	         return redirect('student');
 	         }
     	}
+    }
+
+    public function update(Request $req)
+    {
+    	$email=$req->input('email');
+    	$password=$req->input('password');
+    	
+    	/*DB::table('info')
+            ->where('email', $email)
+            ->update(['password' => $password]);
+        return redirect('home');*/
+        
+       	DB::update('update infos set password = ? where email = ?',[$password,$email]);
+        return redirect('home');
+      
     }
 }
